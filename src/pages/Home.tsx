@@ -6,10 +6,7 @@ import MovieList from '../components/movie-list/MovieList';
 
 import { category, movieType, tvType } from '../api/tmdbApi';
 
-//
 const Home = () => {
-  console.log(process.env.REACT_APP_API_KEY);
-
   return (
     <>
       <HeroSlide />
