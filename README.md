@@ -18,4 +18,4 @@
 
 # Preview
 
-!["Responsive React Movies App With API"](./preview.png 'Responsive React Movies App With API')
+!["Responsive React Movies App With API"](https://user-images.githubusercontent.com/92993973/195949549-3d2299ee-a60a-463b-b846-ef2d57cee62c.png 'Responsive React Movies App With API')
