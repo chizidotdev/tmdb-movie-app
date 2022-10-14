@@ -12,12 +12,11 @@ import apiConfig from '../../api/apiConfig';
 
 import './hero-slide.scss';
 import { HeroSlideProps } from './types';
-import { TMovieResult } from 'src/api/types';
 
 const HeroSlide = () => {
   SwiperCore.use([Autoplay]);
 
-  const [movieItems, setMovieItems] = useState<TMovieResult[]>([]);
+  const [movieItems, setMovieItems] = useState<unknown[]>([]);
 
   useEffect(() => {
     const getMovies = async () => {
@@ -103,7 +102,7 @@ const HeroSlideItem = (props: HeroSlideProps) => {
   );
 };
 
-const TrailerModal = (props: { item: TMovieResult }) => {
+const TrailerModal = (props: { item: any }) => {
   const item = props.item;
 
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
