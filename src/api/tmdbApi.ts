@@ -2,22 +2,22 @@ import { AxiosRequestConfig } from 'axios';
 import axiosClient from './axiosClient';
 import { TMovieResponse } from './types';
 
-export const category = {
-  movie: 'movie',
-  tv: 'tv',
-};
+export enum category {
+  movie = 'movie',
+  tv = 'tv',
+}
 
-export const movieType = {
-  upcoming: 'upcoming',
-  popular: 'popular',
-  top_rated: 'top_rated',
-};
+export enum movieType {
+  upcoming = 'upcoming',
+  popular = 'popular',
+  top_rated = 'top_rated',
+}
 
-export const tvType = {
-  popular: 'popular',
-  top_rated: 'top_rated',
-  on_the_air: 'on_the_air',
-};
+export enum tvType {
+  popular = 'popular',
+  top_rated = 'top_rated',
+  on_the_air = 'on_the_air',
+}
 
 const tmdbApi = {
   getMoviesList: (type: string, params: AxiosRequestConfig<never> | undefined) => {
