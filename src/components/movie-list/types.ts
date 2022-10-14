@@ -1,8 +1,8 @@
 import { category, movieType, tvType } from 'src/api/tmdbApi';
 
-type TType = keyof typeof movieType | keyof typeof tvType;
+type TType = movieType | tvType;
 
-export type TMovieList = { category: keyof typeof category } & (
+export type TMovieList = { category: category } & (
   | { type: TType }
   | { type: 'similar'; id: string }
 );
