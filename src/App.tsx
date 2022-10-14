@@ -12,15 +12,11 @@ import Routes from './config/Routes';
 function App() {
   return (
     <BrowserRouter>
-      <Route
-        render={() => (
-          <>
-            <Header />
-            <Routes />
-            <Footer />
-          </>
-        )}
-      />
+      <Route>
+        <Header />
+        <Routes />
+        <Footer />
+      </Route>
     </BrowserRouter>
   );
 }
