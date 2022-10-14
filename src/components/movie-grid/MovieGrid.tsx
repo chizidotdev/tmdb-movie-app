@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import './movie-grid.scss';
@@ -9,8 +9,8 @@ import Input from '../input/Input';
 
 import tmdbApi, { category, movieType, tvType } from '../../api/tmdbApi';
 
-const MovieGrid = (props) => {
-  const [items, setItems] = useState([]);
+const MovieGrid = (props: { category: string }) => {
+  const [items, setItems] = useState<any[]>([]);
 
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(0);
@@ -68,7 +68,7 @@ const MovieGrid = (props) => {
   return (
     <>
       <div className='section mb-3'>
-        <MovieSearch category={props.category} keyword={keyword} />
+        <MovieSearch category={props.category} keyword={keyword!} />
       </div>
       <div className='movie-grid'>
         {items.map((item, i) => (
@@ -86,7 +86,7 @@ const MovieGrid = (props) => {
   );
 };
 
-const MovieSearch = (props) => {
+const MovieSearch = (props: { keyword: string; category: string }) => {
   const navigate = useNavigate();
 
   const [keyword, setKeyword] = useState(props.keyword ? props.keyword : '');
@@ -98,7 +98,7 @@ const MovieSearch = (props) => {
   }, [keyword, props.category, navigate]);
 
   useEffect(() => {
-    const enterEvent = (e) => {
+    const enterEvent = (e: KeyboardEvent) => {
       e.preventDefault();
       if (e.keyCode === 13) {
         goToSearch();
